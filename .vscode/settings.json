@@ -18,5 +18,13 @@
         "typescript",
         "typescriptreact"
     ],
-    "prettier.requireConfig": true
+    "prettier.requireConfig": true,
+    "scripts": {
+        "start": "live-server ."
+    }
 }
+// ...existing code...
+"scripts": {
+    "start": "live-server ."
+},
+// ...existing code...

@@ -39,3 +39,23 @@ document.addEventListener('DOMContentLoaded', function() {
   </ul>
   <div id="estado-cafeteria" class="estado-abierto">¡Estamos abiertos! ☕</div>
 </div>
+<!-- Script para cargar productos -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('http://localhost:3001/api/products')
+      .then(res => res.json())
+      .then(productos => {
+        const contenedor = document.getElementById('productos-menu');
+        contenedor.innerHTML = '';
+        productos.forEach(producto => {
+          contenedor.innerHTML += `
+            <div class="card producto-menu">
+              <h3>${producto.nombre}</h3>
+              <p>Precio: RD$${producto.precio}</p>
+              <button class="btn agregar-carrito" data-nombre="${producto.nombre}" data-precio="${producto.precio}">Agregar</button>
+            </div>
+          `;
+        });
+      });
+});
+</script>
