@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const ahora = new Date();
   const hora = ahora.getHours();
   // Abierto de 8 a 20 (8:00 a 20:00)
-  if (hora >= 8 && hora < 20) {
+  if (hora >= 8 && hora < 23) {
     estado.textContent = '¡Estamos abiertos! ☕';
     estado.className = 'estado-abierto';
   } else {
