@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos para compatibilidad y responsividad -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Triple A</title>
+    <!-- Enlace a la hoja de estilos personalizada -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuentes externas de Google Fonts para Orbitron y Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Enlace al archivo JavaScript externo (defer para cargar después del HTML) -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Encabezado principal con navegación -->
+    <header class="container fade-in">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <!-- Título con ícono de café -->
+            <h1><span>☕</span> Cafetería Triple A</h1>
+            <!-- Menú de navegación principal -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">🍰 Menú</a></li>
+                    <li><a href="#galeria">🖼️ Galería</a></li>
+                    <li><a href="#contacto">📬 Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container fade-in">
+        <!-- Sección de bienvenida con mensaje y horario -->
+        <section id="bienvenida" class="card">
+            <h2 style="font-family:'Orbitron',Arial,sans-serif; color:#00ffae;">Bienvenido a Cafetería Triple A</h2>
+            <p>Disfruta del mejor café, postres artesanales y un ambiente único en el corazón de la ciudad.</p>
+            <!-- Horario con estado dinámico -->
+            <div id="horario" class="card" style="
+                background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                box-shadow: 0 4px 24px #1a73e8cc;
+                border-radius: 1em;
+                position: relative;
+                overflow: hidden;
+            ">
+                <div style="
+                    background: rgba(30,41,59,0.80);
+                    padding: 1.5em 1em;
+                    border-radius: 1em;
+                    position: relative;
+                    z-index: 1;
+                ">
+                    <h3 style="font-family:'Orbitron',Arial,sans-serif; color:#7fbcff;">🕒 Horario</h3>
+                    <ul style="list-style:none; padding:0; margin:1em 0;">
+                        <li>Lunes a Domingo: <strong>8:00 AM - 23:00 PM</strong></li>
+                    </ul>
+                    <!-- Estado de la cafetería (abierto/cerrado) -->
+                    <div id="estado-cafeteria" class="estado-abierto">¡Estamos abiertos! ☕</div>
+                </div>
+                <!-- Capa oscura para mejorar contraste -->
+                <div style="
+                    position:absolute;
+                    inset:0;
+                    background:linear-gradient(120deg,rgba(30,41,59,0.7) 60%,rgba(26,115,232,0.3) 100%);
+                    z-index:0;
+                "></div>
+            </div>
+        </section>
+
+        <!-- Sección de menú destacado con productos -->
+        <section id="menu" 
+    class="card" 
+    style="
+        position:relative;
+        overflow:hidden;
+        background: none;
+        margin-bottom: 2em;
+    "
+>
+    <!-- Imagen de fondo moderna para el menú -->
+    <div 
+        style="
+            position:absolute;
+            inset:0;
+            z-index:0;
+            background: linear-gradient(120deg,rgba(30,41,59,0.82) 60%,rgba(26,115,232,0.18) 100%), 
+                        url('https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            filter: brightness(0.85) blur(0.5px);
+        "
+        aria-hidden="true"
+    ></div>
+    <h2 style="font-family:'Orbitron',Arial,sans-serif; color:#00ffae; text-align:center; letter-spacing:1px; margin-bottom:1.2em; position:relative; z-index:1;">
+        <span style="font-size:1.3em;">✨ Menú Destacado</span>
+    </h2>
+    <div class="grid grid-4" id="productos-menu" style="gap:2em; position:relative; z-index:1;">
+        <!-- Producto 1 -->
+        <div class="card producto-menu" style="display:flex; flex-direction:column; align-items:center; padding:1.5em 1em; background:rgba(30,41,59,0.93); border-radius:1.2em; box-shadow:0 4px 24px #00ffae33;">
+            <img src="https://i.pinimg.com/736x/82/06/a1/8206a16d951e4431f329d3033b7381b8.jpg" alt="Yaroa de Res grande" style="width:120px; height:120px; border-radius:1em; object-fit:cover; margin-bottom:1em; box-shadow:0 2px 16px #00ffae55;">
+            <h3 style="margin:0.3em 0 0.2em 0; color:#00ffae; font-family:'Orbitron',Arial,sans-serif;">Yaroa de Res grande</h3>
+            <p style="font-size:1em; color:#e3eafc; margin:0 0 0.7em 0; text-align:center;">Yaroa con las mejores papas, carne de res y fina salsa de queso, ketchup y queso mozarella.</p>
+            <div style="display:flex; align-items:center; gap:1em; width:100%; justify-content:space-between;">
+                <span style="font-weight:bold; color:#00ffae; font-size:1.15em;">RD$400.00</span>
+                <button class="btn agregar-carrito" data-nombre="Yaroa de Res grande" data-precio="400" style="font-size:1em; background:#1a73e8; color:#fff; border-radius:0.7em;">Agregar</button>
+            </div>
+        </div>
+        <!-- Producto 2 -->
+        <div class="card producto-menu" style="display:flex; flex-direction:column; align-items:center; padding:1.5em 1em; background:rgba(30,41,59,0.93); border-radius:1.2em; box-shadow:0 4px 24px #00ffae33;">
+            <img src="https://i.pinimg.com/736x/e1/d6/63/e1d663bf88bf37b991453fc6d3e34589.jpg" alt="Cappuccino" style="width:120px; height:120px; border-radius:1em; object-fit:cover; margin-bottom:1em; box-shadow:0 2px 16px #00ffae55;">
+            <h3 style="margin:0.3em 0 0.2em 0; color:#00ffae; font-family:'Orbitron',Arial,sans-serif;">Cappuccino</h3>
+            <p style="font-size:1em; color:#e3eafc; margin:0 0 0.7em 0; text-align:center;">Con espuma de leche cremosa.</p>
+            <div style="display:flex; align-items:center; gap:1em; width:100%; justify-content:space-between;">
+                <span style="font-weight:bold; color:#00ffae; font-size:1.15em;">RD$120.00</span>
+                <button class="btn agregar-carrito" data-nombre="Cappuccino" data-precio="120" style="font-size:1em; background:#1a73e8; color:#fff; border-radius:0.7em;">Agregar</button>
+            </div>
+        </div>
+        <!-- Producto 3 -->
+        <div class="card producto-menu" style="display:flex; flex-direction:column; align-items:center; padding:1.5em 1em; background:rgba(30,41,59,0.93); border-radius:1.2em; box-shadow:0 4px 24px #00ffae33;">
+            <img src="https://i.pinimg.com/736x/ef/d9/69/efd9698425302c410e91e2e0104c6dad.jpg" alt="Cheesecake" style="width:120px; height:120px; border-radius:1em; object-fit:cover; margin-bottom:1em; box-shadow:0 2px 16px #00ffae55;">
+            <h3 style="margin:0.3em 0 0.2em 0; color:#00ffae; font-family:'Orbitron',Arial,sans-serif;">Cheesecake</h3>
+            <p style="font-size:1em; color:#e3eafc; margin:0 0 0.7em 0; text-align:center;">Postre casero con salsa de frutos rojos.</p>
+            <div style="display:flex; align-items:center; gap:1em; width:100%; justify-content:space-between;">
+                <span style="font-weight:bold; color:#00ffae; font-size:1.15em;">RD$180.00</span>
+                <button class="btn agregar-carrito" data-nombre="Cheesecake" data-precio="180" style="font-size:1em; background:#1a73e8; color:#fff; border-radius:0.7em;">Agregar</button>
+            </div>
+        </div>
+        <!-- Producto 4 -->
+        <div class="card producto-menu" style="display:flex; flex-direction:column; align-items:center; padding:1.5em 1em; background:rgba(30,41,59,0.93); border-radius:1.2em; box-shadow:0 4px 24px #00ffae33;">
+            <img src="https://i.pinimg.com/736x/0d/f2/6c/0df26c5e32528de735b9161064f2b2a6.jpg" alt="Brownie" style="width:120px; height:120px; border-radius:1em; object-fit:cover; margin-bottom:1em; box-shadow:0 2px 16px #00ffae55;">
+            <h3 style="margin:0.3em 0 0.2em 0; color:#00ffae; font-family:'Orbitron',Arial,sans-serif;">Brownie</h3>
+            <p style="font-size:1em; color:#e3eafc; margin:0 0 0.7em 0; text-align:center;">Brownie de chocolate con nueces y topping de helado.</p>
+            <div style="display:flex; align-items:center; gap:1em; width:100%; justify-content:space-between;">
+                <span style="font-weight:bold; color:#00ffae; font-size:1.15em;">RD$245.00</span>
+                <button class="btn agregar-carrito" data-nombre="Brownie" data-precio="245" style="font-size:1em; background:#1a73e8; color:#fff; border-radius:0.7em;">Agregar</button>
+            </div>
+        </div>
+        <!-- Producto 5 -->
+        <div class="card producto-menu" style="display:flex; flex-direction:column; align-items:center; padding:1.5em 1em; background:rgba(30,41,59,0.93); border-radius:1.2em; box-shadow:0 4px 24px #00ffae33;">
+            <img src="https://i.pinimg.com/736x/6a/86/c3/6a86c387495a30851e5843a582c7b6f2.jpg" alt="Latte Art" style="width:120px; height:120px; border-radius:1em; object-fit:cover; margin-bottom:1em; box-shadow:0 2px 16px #00ffae55;">
+            <h3 style="margin:0.3em 0 0.2em 0; color:#00ffae; font-family:'Orbitron',Arial,sans-serif;">Latte Art</h3>
+            <p style="font-size:1em; color:#e3eafc; margin:0 0 0.7em 0; text-align:center;">Café latte con arte en la espuma, ideal para fotos.</p>
+            <div style="display:flex; align-items:center; gap:1em; width:100%; justify-content:space-between;">
+                <span style="font-weight:bold; color:#00ffae; font-size:1.15em;">RD$130.00</span>
+                <button class="btn agregar-carrito" data-nombre="Latte Art" data-precio="130" style="font-size:1em; background:#1a73e8; color:#fff; border-radius:0.7em;">Agregar</button>
+            </div>
+        </div>
+        <!-- Producto 6 -->
+        <div class="card producto-menu" style="display:flex; flex-direction:column; align-items:center; padding:1.5em 1em; background:rgba(30,41,59,0.93); border-radius:1.2em; box-shadow:0 4px 24px #00ffae33;">
+            <img src="https://i.pinimg.com/736x/cf/9b/af/cf9bafa8f904bb4c2aacf06cebf46331.jpg" alt="Croissant" style="width:120px; height:120px; border-radius:1em; object-fit:cover; margin-bottom:1em; box-shadow:0 2px 16px #00ffae55;">
+            <h3 style="margin:0.3em 0 0.2em 0; color:#00ffae; font-family:'Orbitron',Arial,sans-serif;">Croissant</h3>
+            <p style="font-size:1em; color:#e3eafc; margin:0 0 0.7em 0; text-align:center;">Croissant francés recién horneado, mantecoso y crujiente.</p>
+            <div style="display:flex; align-items:center; gap:1em; width:100%; justify-content:space-between;">
+                <span style="font-weight:bold; color:#00ffae; font-size:1.15em;">RD$110.00</span>
+                <button class="btn agregar-carrito" data-nombre="Croissant" data-precio="110" style="font-size:1em; background:#1a73e8; color:#fff; border-radius:0.7em;">Agregar</button>
+            </div>
+        </div>
+        <!-- Producto 7 -->
+        <div class="card producto-menu" style="display:flex; flex-direction:column; align-items:center; padding:1.5em 1em; background:rgba(30,41,59,0.93); border-radius:1.2em; box-shadow:0 4px 24px #00ffae33;">
+            <img src="https://i.pinimg.com/736x/75/9c/9f/759c9fb4ebbf78c8c53e26bacc641479.jpg" alt="Tarta de Frutas" style="width:120px; height:120px; border-radius:1em; object-fit:cover; margin-bottom:1em; box-shadow:0 2px 16px #00ffae55;">
+            <h3 style="margin:0.3em 0 0.2em 0; color:#00ffae; font-family:'Orbitron',Arial,sans-serif;">Tarta de Frutas</h3>
+            <p style="font-size:1em; color:#e3eafc; margin:0 0 0.7em 0; text-align:center;">Tarta artesanal con frutas frescas de temporada.</p>
+            <div style="display:flex; align-items:center; gap:1em; width:100%; justify-content:space-between;">
+                <span style="font-weight:bold; color:#00ffae; font-size:1.15em;">RD$160.00</span>
+                <button class="btn agregar-carrito" data-nombre="Tarta de Frutas" data-precio="160" style="font-size:1em; background:#1a73e8; color:#fff; border-radius:0.7em;">Agregar</button>
+            </div>
+        </div>
+        <!-- Producto 8 -->
+        <div class="card producto-menu" style="display:flex; flex-direction:column; align-items:center; padding:1.5em 1em; background:rgba(30,41,59,0.93); border-radius:1.2em; box-shadow:0 4px 24px #00ffae33;">
+            <img src="https://i.pinimg.com/736x/4d/a7/a1/4da7a1a13ec32a970f229fd1cc252d24.jpg" alt="Muffin de Arándanos" style="width:120px; height:120px; border-radius:1em; object-fit:cover; margin-bottom:1em; box-shadow:0 2px 16px #00ffae55;">
+            <h3 style="margin:0.3em 0 0.2em 0; color:#00ffae; font-family:'Orbitron',Arial,sans-serif;">Muffin de Arándanos</h3>
+            <p style="font-size:1em; color:#e3eafc; margin:0 0 0.7em 0; text-align:center;">Muffin esponjoso con arándanos naturales y toque de limón.</p>
+            <div style="display:flex; align-items:center; gap:1em; width:100%; justify-content:space-between;">
+                <span style="font-weight:bold; color:#00ffae; font-size:1.15em;">RD$95.00</span>
+                <button class="btn agregar-carrito" data-nombre="Muffin de Arándanos" data-precio="95" style="font-size:1em; background:#1a73e8; color:#fff; border-radius:0.7em;">Agregar</button>
+            </div>
+        </div>
+        <!-- Producto 9 -->
+        <div class="card producto-menu" style="display:flex; flex-direction:column; align-items:center; padding:1.5em 1em; background:rgba(30,41,59,0.93); border-radius:1.2em; box-shadow:0 4px 24px #00ffae33;">
+            <img src="https://i.pinimg.com/736x/b6/bc/eb/b6bceb0dc50cb3247b9c632bfc1dcd3c.jpg" alt="Sandwich Club" style="width:120px; height:120px; border-radius:1em; object-fit:cover; margin-bottom:1em; box-shadow:0 2px 16px #00ffae55;">
+            <h3 style="margin:0.3em 0 0.2em 0; color:#00ffae; font-family:'Orbitron',Arial,sans-serif;">Sandwich Club</h3>
+            <p style="font-size:1em; color:#e3eafc; margin:0 0 0.7em 0; text-align:center;">Sandwich triple con pollo, jamón, queso, huevo y vegetales frescos.</p>
+            <div style="display:flex; align-items:center; gap:1em; width:100%; justify-content:space-between;">
+                <span style="font-weight:bold; color:#00ffae; font-size:1.15em;">RD$210.00</span>
+                <button class="btn agregar-carrito" data-nombre="Sandwich Club" data-precio="210" style="font-size:1em; background:#1a73e8; color:#fff; border-radius:0.7em;">Agregar</button>
+            </div>
+        </div>
+        <!-- Producto 10 -->
+        <div class="card producto-menu" style="display:flex; flex-direction:column; align-items:center; padding:1.5em 1em; background:rgba(30,41,59,0.93); border-radius:1.2em; box-shadow:0 4px 24px #00ffae33;">
+            <img src="https://i.pinimg.com/736x/f9/44/0a/f9440a663a7fef5f9fec1d2fc1e7ca7e.jpg" alt="Frapuccino" style="width:120px; height:120px; border-radius:1em; object-fit:cover; margin-bottom:1em; box-shadow:0 2px 16px #00ffae55;">
+            <h3 style="margin:0.3em 0 0.2em 0; color:#00ffae; font-family:'Orbitron',Arial,sans-serif;">Frapuccino</h3>
+            <p style="font-size:1em; color:#e3eafc; margin:0 0 0.7em 0; text-align:center;">Bebida fría de café, leche y hielo, coronada con crema batida.</p>
+            <div style="display:flex; align-items:center; gap:1em; width:100%; justify-content:space-between;">
+                <span style="font-weight:bold; color:#00ffae; font-size:1.15em;">RD$160.00</span>
+                <button class="btn agregar-carrito" data-nombre="Frapuccino" data-precio="160" style="font-size:1em; background:#1a73e8; color:#fff; border-radius:0.7em;">Agregar</button>
+            </div>
+        </div>
+        <!-- Producto 11 -->
+        <div class="card producto-menu" style="display:flex; flex-direction:column; align-items:center; padding:1.5em 1em; background:rgba(30,41,59,0.93); border-radius:1.2em; box-shadow:0 4px 24px #00ffae33;">
+            <img src="https://i.pinimg.com/736x/3a/08/cc/3a08cc7e684137f0416914588cd01328.jpg" alt="Brownie Vegano" style="width:120px; height:120px; border-radius:1em; object-fit:cover; margin-bottom:1em; box-shadow:0 2px 16px #00ffae55;">
+            <h3 style="margin:0.3em 0 0.2em 0; color:#00ffae; font-family:'Orbitron',Arial,sans-serif;">Brownie Vegano</h3>
+            <p style="font-size:1em; color:#e3eafc; margin:0 0 0.7em 0; text-align:center;">Brownie de chocolate sin ingredientes de origen animal.</p>
+            <div style="display:flex; align-items:center; gap:1em; width:100%; justify-content:space-between;">
+                <span style="font-weight:bold; color:#00ffae; font-size:1.15em;">RD$245.00</span>
+                <button class="btn agregar-carrito" data-nombre="Brownie Vegano" data-precio="245" style="font-size:1em; background:#1a73e8; color:#fff; border-radius:0.7em;">Agregar</button>
+            </div>
+        </div>
+        <!-- Producto 12 -->
+        <div class="card producto-menu" style="display:flex; flex-direction:column; align-items:center; padding:1.5em 1em; background:rgba(30,41,59,0.93); border-radius:1.2em; box-shadow:0 4px 24px #00ffae33;">
+            <img src="https://i.pinimg.com/736x/87/03/3d/87033d89cf3ab6204942553e641d9648.jpg " alt="Té Chai Latte" style="width:120px; height:120px; border-radius:1em; object-fit:cover; margin-bottom:1em; box-shadow:0 2px 16px #00ffae55;">
+            <h3 style="margin:0.3em 0 0.2em 0; color:#00ffae; font-family:'Orbitron',Arial,sans-serif;">Té Chai Latte</h3>
+            <p style="font-size:1em; color:#e3eafc; margin:0 0 0.7em 0; text-align:center;">Infusión de té negro con especias y leche cremosa.</p>
+            <div style="display:flex; align-items:center; gap:1em; width:100%; justify-content:space-between;">
+                <span style="font-weight:bold; color:#00ffae; font-size:1.15em;">RD$140.00</span>
+                <button class="btn agregar-carrito" data-nombre="Té Chai Latte" data-precio="140" style="font-size:1em; background:#1a73e8; color:#fff; border-radius:0.7em;">Agregar</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Carrito de compras flotante SIEMPRE visible -->
+        <div id="carrito-flotante" class="card">
+            <h3 style="font-family:'Orbitron',Arial,sans-serif; color:#00ffae; margin-bottom:0.5em;">🛒 Tu Compra</h3>
+            <ul id="lista-carrito-flotante" style="list-style:none; padding:0; margin:0 0 0.5em 0; max-height:180px; overflow-y:auto;"></ul>
+            <p id="total-carrito-flotante" style="font-weight:bold; margin:0 0 0.5em 0;">Total: $0.00</p>
+            <button class="btn" id="vaciar-carrito-flotante" style="display:none; width:100%;">Vaciar compra</button>
+        </div>
+
+        <!-- Sección de galería de imágenes -->
+        <section id="galeria" class="card" style="padding:2.5em 1em; max-width:1400px; margin:auto;">
+            <h2 style="font-family:'Orbitron',Arial,sans-serif; color:#00ffae; display:flex; align-items:center; justify-content:space-between; font-size:2em;">
+                Galería de Fotos
+                <button id="toggle-galeria" class="btn" style="font-size:1em; margin-left:1em;">Ocultar galería</button>
+            </h2>
+            <div id="contenedor-galeria" class="galeria-moderna">
+                <img src="https://i.pinimg.com/736x/82/06/a1/8206a16d951e4431f329d3033b7381b8.jpg" alt="Taza de café">
+                <img src="https://i.pinimg.com/736x/0d/f2/6c/0df26c5e32528de735b9161064f2b2a6.jpg" alt="Barista preparando café">
+                <img src="https://i.pinimg.com/736x/98/b9/6b/98b96b649977e3f20ef15a3ad1155df9.jpg" alt="Brownie">
+                <img src="https://i.pinimg.com/736x/76/6b/ad/766badbfbc6da68e38c01741c4cf143e.jpg" alt="Ambiente cafetería">
+                <img src="https://i.pinimg.com/736x/17/df/01/17df0135a9bda651bb33d723335e80d2.jpg" alt="Cafetería moderna">
+                <img src="https://i.pinimg.com/736x/78/f6/b3/78f6b301e6824680e9396cb46884f63b.jpg" alt="Café latte art">
+                <img src="https://i.pinimg.com/736x/9e/79/51/9e7951230ffa11fb1b6c32019707b715.jpg" alt="Mesa con postres">
+                <img src="https://i.pinimg.com/736x/dd/94/14/dd94143bdbbe333c5dafa62af4c8c19c.jpg" alt="Interior cafetería">
+                <img src="https://i.pinimg.com/736x/ef/d9/69/efd9698425302c410e91e2e0104c6dad.jpg" alt="Postre artesanal">
+                <img src="https://i.pinimg.com/736x/70/e1/bf/70e1bf61cdd75494bb721b3d0854e93e.jpg" alt="Interior de la cafetería">
+                <img src="https://i.pinimg.com/736x/60/bf/45/60bf4527582fed27713418529f889f1c.jpg" alt="Interior de la cafetería">
+                <img src="https://i.pinimg.com/736x/76/7f/c8/767fc88dcabca9e83209581e8985e0bf.jpg" alt="Interior de la cafetería">
+                <img src="https://i.pinimg.com/736x/a5/d0/0a/a5d00a5989e0d6bdf3820de4e75bc409.jpg" alt="Interior de la cafetería">
+                <img src="https://i.pinimg.com/736x/08/e6/64/08e664a3f5e129227325b3da3d38f034.jpg" alt="Interior de la cafetería">
+                <img src="https://i.pinimg.com/736x/54/1e/43/541e4347b37779d800449d29964d74a3.jpg" alt="Interior de la cafetería">
+               <img src="https://i.pinimg.com/736x/4f/7e/4a/4f7e4a7fc060a21c9501f7481be29116.jpg" alt="Interior de la cafetería">
+               <img src="https://i.pinimg.com/736x/70/fc/3b/70fc3ba83403f870968f3628d41fc377.jpg" alt="Interior de la cafetería">
+               <img src="https://i.pinimg.com/736x/f0/e0/92/f0e092dd7186123a7d4c5e79de52b5e8.jpg" alt="Interior de la cafetería">
+               <img src="https://i.pinimg.com/736x/57/b2/f1/57b2f1db5c9157ba19614be4848edcec.jpg" alt="Interior de la cafetería">
+                <img src="https://i.pinimg.com/736x/d0/d4/90/d0d4907c67d633e663f5ae906d87924d.jpg" alt="Interior de la cafetería">
+                <img src="https://i.pinimg.com/736x/2d/fa/d3/2dfad3d298831efc79195d5d945f740e.jpg" alt="Interior de la cafetería">
+                <img src="https://i.pinimg.com/736x/9f/90/b0/9f90b02bbf40189b8e15660419050e7c.jpg" alt="Interior de la cafetería">
+                <img src="https://i.pinimg.com/736x/0e/13/9c/0e139c6d0ea7e68815763d644934c94c.jpg" alt="Interior de la cafetería">
+                <img src="https://i.pinimg.com/736x/4c/85/11/4c85116007e2466d3e373517f6f0544f.jpg" alt="Interior de la cafetería">
+               <img src="https://i.pinimg.com/736x/1c/5a/89/1c5a895788610aae0c025fb9f2c79cb9.jpg" alt="Interior de la cafetería">
+               <img src="https://i.pinimg.com/736x/8f/93/db/8f93dba945475231e069b5203d3c34fe.jpg" alt="Interior de la cafetería">
+               <img src="https://i.pinimg.com/736x/33/b2/ad/33b2adb0555859d00154567ff2ed2350.jpg" alt="Interior de la cafetería">
+                <img src="https://i.pinimg.com/736x/b2/bf/00/b2bf00a0106768504dd6aca275e326ae.jpg" alt="Interior de la cafetería">
+              <img src="https://i.pinimg.com/736x/e8/82/79/e88279be873a29efce63d05952ee3797.jpg" alt="Interior de la cafetería">
+                 <img src="https://i.pinimg.com/736x/e9/26/ef/e926ef987c8462cd9ef0e197c1fc3195.jpg" alt="Interior de la cafetería">
+                <img src="https://i.pinimg.com/736x/e2/2e/6d/e22e6d4f103bac0d284fbbe9aef7e9e8.jpg" alt="Interior de la cafetería">
+                    <img src="https://i.pinimg.com/736x/13/8e/aa/138eaac287e1806ed1dfc2d22af65044.jpg" alt="Interior de la cafetería">
+                
+                   <p>
+                       <img src="local1.jpg" alt="Interior de la cafetería">
+
+                <!-- Puedes agregar más imágenes aquí -->
+            </div>
+        </section>
+
+        <!-- Sección de contacto con formulario -->
+        <section id="contacto" class="card">
+            <h2 style="font-family:'Orbitron',Arial,sans-serif; color:#00ffae;">Contacto</h2>
+            <form id="formulario-contacto" autocomplete="off">
+                <!-- Campo nombre -->
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <!-- Campo email -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <!-- Campo mensaje -->
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+                <!-- Campos de fecha y hora preferida en grid -->
+                <div class="grid grid-2">
+                    <div>
+                        <label for="fecha">Fecha de visita:</label>
+                        <input type="date" id="fecha" name="fecha">
+                    </div>
+                    <div>
+                        <label for="hora">Hora preferida:</label>
+                        <input type="time" id="hora" name="hora">
+                    </div>
+                </div>
+                <!-- Checkbox para promociones -->
+                <label style="margin-top:1em;">
+                    <input type="checkbox" id="notificaciones" name="notificaciones">
+                    Deseo recibir promociones y novedades
+                </label>
+                <!-- Botón de envío -->
+                <button type="submit" class="btn" style="margin-top:1em;">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de página con información de contacto y derechos -->
+    <footer id="footer" class="container fade-in">
+        <p>&copy; 2025 Cafetería Triple A. Todos los derechos reservados.</p>
+        <p>Dirección: Calle El Limon las Terrenas Km 7, Samana  | Tel: (809) 654-5714 | 
+            <a href="mailto:vanessamedina@gmail.com.com" style="color:#00ffae;">info@cafearoma.com</a>
+        </p>
+        <p>
+            <!-- Botón para volver arriba -->
+            <a href="#bienvenida" class="btn" style="font-size:0.9em;">Volver arriba ↑</a>
+        </p>
+    </footer>
+
+    <!-- Script para mostrar el estado abierto/cerrado de la cafetería -->
+    <script>
+    // Horario futurista with mensaje dinámico
+    document.addEventListener('DOMContentLoaded', function() {
+      // Selecciona el elemento de estado
+      const estado = document.getElementById('estado-cafeteria');
+      // Obtiene la hora actual
+      const ahora = new Date();
+      const hora = ahora.getHours();
+      // Si está dentro del horario, muestra abierto, si no, cerrado
+      if (hora >= 8 && hora < 23) {
+        estado.textContent = '¡Estamos abiertos! ☕';
+        estado.className = 'estado-abierto';
+      } else {
+        estado.textContent = 'Cerrado ahora. ¡Te esperamos de 8:00 AM a 11:00 PM!';
+        estado.className = 'estado-cerrado';
+      }
+    });
+    </script>
+
+    <!-- Script para el carrito de compras -->
+    <script>
+    // Carrito de compras flotante funcional y único con control de cantidad
+    document.addEventListener('DOMContentLoaded', function() {
+        let carrito = [];
+        const listaCarritoFlotante = document.getElementById('lista-carrito-flotante');
+        const totalCarritoFlotante = document.getElementById('total-carrito-flotante');
+        const vaciarBtnFlotante = document.getElementById('vaciar-carrito-flotante');
+
+        // Actualiza la visualización del carrito flotante
+        function actualizarCarrito() {
+            listaCarritoFlotante.innerHTML = '';
+            let total = 0;
+            carrito.forEach((item, idx) => {
+                // Crea cada línea del carrito con controles de cantidad
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span style="font-weight:bold;">${item.nombre}</span>
+                    <button class="btn btn-menos" data-idx="${idx}" style="margin:0 0.3em; background:#1a73e8; color:#fff; border-radius:0.5em; font-size:1em;">-</button>
+                    <input type="number" min="1" value="${item.cantidad}" data-idx="${idx}" class="input-cantidad" style="width:2.5em; text-align:center; border-radius:0.5em; border:1px solid #00ffae;">
+                    <button class="btn btn-mas" data-idx="${idx}" style="margin:0 0.3em; background:#1a73e8; color:#fff; border-radius:0.5em; font-size:1em;">+</button>
+                    <span style="color:#00ffae; margin-left:1em;">$${(item.precio * item.cantidad).toFixed(2)}</span>
+                    <button class="btn btn-quitar" style="margin-left:1em; background:#e81a81; color:#fff; padding:0.2em 0.7em; font-size:0.9em;"
+                        data-idx="${idx}">Quitar</button>
+                `;
+                listaCarritoFlotante.appendChild(li);
+                total += item.precio * item.cantidad;
+            });
+            totalCarritoFlotante.textContent = `Total: $${total.toFixed(2)}`;
+            vaciarBtnFlotante.style.display = carrito.length ? 'inline-block' : 'none';
+
+            // Botón para quitar producto
+            listaCarritoFlotante.querySelectorAll('.btn-quitar').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const idx = parseInt(this.getAttribute('data-idx'));
+                    carrito.splice(idx, 1);
+                    actualizarCarrito();
+                });
+            });
+
+            // Botón para aumentar cantidad
+            listaCarritoFlotante.querySelectorAll('.btn-mas').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const idx = parseInt(this.getAttribute('data-idx'));
+                    carrito[idx].cantidad++;
+                    actualizarCarrito();
+                });
+            });
+
+            // Botón para disminuir cantidad
+            listaCarritoFlotante.querySelectorAll('.btn-menos').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const idx = parseInt(this.getAttribute('data-idx'));
+                    if (carrito[idx].cantidad > 1) {
+                        carrito[idx].cantidad--;
+                    }
+                    actualizarCarrito();
+                });
+            });
+
+            // Cambiar cantidad manualmente
+            listaCarritoFlotante.querySelectorAll('.input-cantidad').forEach(input => {
+                input.addEventListener('change', function() {
+                    const idx = parseInt(this.getAttribute('data-idx'));
+                    let val = parseInt(this.value);
+                    if (isNaN(val) || val < 1) val = 1;
+                    carrito[idx].cantidad = val;
+                    actualizarCarrito();
+                });
+            });
+        }
+
+        // Botón "Agregar" en cada producto del menú
+        document.querySelectorAll('.agregar-carrito').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const nombre = this.getAttribute('data-nombre');
+                const precio = parseFloat(this.getAttribute('data-precio'));
+                const existente = carrito.find(p => p.nombre === nombre);
+                if (existente) {
+                    existente.cantidad++;
+                } else {
+                    carrito.push({nombre, precio, cantidad: 1});
+                }
+                actualizarCarrito();
+            });
+        });
+
+        // Botón para vaciar todo el carrito
+        vaciarBtnFlotante.addEventListener('click', function() {
+            carrito = [];
+            actualizarCarrito();
+        });
+
+        // Exponer para depuración si lo deseas
+        window.carrito = carrito;
+        window.actualizarCarrito = actualizarCarrito;
+    });
+    </script>
+
+    <!-- Script para mostrar/ocultar galería -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('toggle-galeria');
+        const galeria = document.getElementById('contenedor-galeria');
+        let visible = true;
+        btn.addEventListener('click', function() {
+            visible = !visible;
+            galeria.style.display = visible ? 'grid' : 'none';
+            btn.textContent = visible ? 'Ocultar galería' : 'Mostrar galería';
+        });
+    });
+    </script>
+
+    <style>
+        #carrito-flotante {
+            position: fixed;
+            top: 80px;
+            right: 32px;
+            width: 320px;
+            background: rgba(30,41,59,0.97);
+            border-radius: 1.2em;
+            box-shadow: 0 8px 32px #00ffae55, 0 2px 16px #1a73e8;
+            z-index: 1000;
+            padding: 1.2em 1em 1em 1em;
+            border: 2px solid #00ffae;
+        }
+        @media (max-width: 900px) {
+            #carrito-flotante {
+                width: 95vw;
+                right: 2.5vw;
+                top: 10px;
+                padding: 1em 0.5em;
+            }
+        }
+    </style>
+</body>
+</html>

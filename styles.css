@@ -1,0 +1,242 @@
+/* Importa las fuentes Orbitron y Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Orbitron&display=swap');
+/* Estilos generales para el cuerpo de la página */
+body {
+    background: linear-gradient(120deg, #232526 0%, #414345 100%); /* Fondo degradado oscuro */
+    font-family: 'Roboto', Arial, sans-serif; /* Fuente principal */
+    color: #e3eafc; /* Color de texto claro */
+}
+
+/* Estilos para el encabezado principal */
+header {
+    background: rgba(59, 30, 30, 0.95); /* Fondo oscuro translúcido */
+    border-radius: 0 0 2em 2em; /* Bordes inferiores redondeados */
+    box-shadow: 0 8px 32px rgba(26,115,232,0.12); /* Sombra azul */
+    margin-bottom: 2em; /* Espaciado inferior */
+    padding: 2em 0; /* Espaciado interno */
+    text-align: center; /* Centrado */
+    position: relative; /* Posicionamiento relativo */
+    z-index: 1; /* Z-index para superposición */
+}
+
+/* Estilos para el título principal */
+h1 {
+    font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif; /* Fuente futurista */
+    letter-spacing: 0.08em; /* Espaciado entre letras */
+    color: #94ff7f; /* Color verde neón */
+    font-size: 2.5em; /* Tamaño grande */
+    display: flex; /* Alineación horizontal */
+    align-items: center; /* Centrado vertical */
+    gap: 0.5em; /* Espacio entre elementos */
+    text-align: center;
+}
+
+/* Estilos para la lista de navegación */
+nav ul {
+    display: flex; /* Elementos en línea */
+    gap: 2em; /* Espacio entre enlaces */
+    list-style: none; /* Sin viñetas */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para los enlaces de navegación */
+nav a {
+    color: #e3eafc; /* Color claro */
+    font-size: 1.1em; /* Tamaño de fuente */
+    font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif; /* Fuente futurista */
+    letter-spacing: 0.04em; /* Espaciado entre letras */
+    padding: 0.5em 1em; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s; /* Transiciones suaves */
+}
+
+/* Efecto hover para los enlaces de navegación */
+nav a:hover {
+    background: #1a73e8; /* Fondo azul al pasar el mouse */
+    color: #fff; /* Texto blanco */
+    box-shadow: 0 2px 12px #1a73e8; /* Sombra azul */
+}
+
+/* Estilos para las tarjetas (contenedores de secciones) */
+.card {
+    background: rgba(255,255,255,0.07); /* Fondo translúcido */
+    border: 1px solid #1a73e8; /* Borde azul */
+    border-radius: 1.5em; /* Bordes redondeados */
+    box-shadow: 0 4px 24px rgba(26,115,232,0.10); /* Sombra azul */
+    backdrop-filter: blur(4px); /* Efecto de desenfoque */
+}
+
+/* Estilos para la sección de bienvenida */
+#bienvenida {
+    text-align: center; /* Centrado */
+    background: linear-gradient(120deg, #e81a81 10%, #232526 100%); /* Fondo degradado azul a oscuro */
+    color: #fff; /* Texto blanco */
+}
+
+/* Estilos para el bloque de horario */
+#horario {
+    margin: 2em auto; /* Centrado y espaciado */
+    max-width: 420px; /* Ancho máximo */
+    background: rgba(30,41,59,0.85); /* Fondo oscuro translúcido */
+    border: 1px solid #ff7fb0; /* Borde azul claro */
+    border-radius: 1em; /* Bordes redondeados */
+    box-shadow: 0 2px 16px #1a73e8; /* Sombra azul */
+    padding: 1.5em 1em; /* Espaciado interno */
+}
+
+/* Estado de cafetería: abierto */
+#estado-cafeteria.estado-abierto {
+    color: #00ffae; /* Verde neón */
+    background: #0a2e2c; /* Fondo verde oscuro */
+    border: 1px solid #00ffae; /* Borde verde */
+    font-family: 'Orbitron', Arial, sans-serif; /* Fuente futurista */
+    font-size: 1.1em;
+    margin-top: 1em;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    box-shadow: 0 2px 8px #00ffae33; /* Sombra verde */
+    display: inline-block;
+}
+
+/* Estado de cafetería: cerrado */
+#estado-cafeteria.estado-cerrado {
+    color: #00ffae; /* Verde neón (puedes cambiar a rojo si prefieres) */
+    background: #2e0a0a; /* Fondo rojo oscuro */
+    border: 1px solid rgb(59, 255, 92); /* Borde rojo */
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 1.1em;
+    margin-top: 1em;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    box-shadow: 0 2px 8px #ff3b3b33; /* Sombra roja */
+    display: inline-block;
+}
+
+/* Grid de 3 columnas para menú y galería, responsivo */
+.grid.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Grid de 4 columnas para menú y galería, responsivo */
+.grid.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2em;
+}
+
+/* Estilos para imágenes dentro de tarjetas (productos del menú) */
+.card img {
+    width: 100px;
+    height: 90px;
+    object-fit: cover; /* Recorte para que la imagen no se deforme */
+    border-radius: 50%; /* Forma circular */
+    margin-bottom: 1em;
+    border: 2px solid #7fbcff;
+    box-shadow: 0 2px 8px #1a73e8;
+    background: #fff;
+}
+
+/* Estilos para imágenes de la galería */
+#galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 2em;
+}
+
+#galeria img {
+    width: 220px;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 1.5em;
+    border: 3px solid #00ffae;
+    box-shadow:
+        0 4px 24px #00ffae55,
+        0 1.5px 8px #1a73e8,
+        0 0 0 8px #1a73e80a inset;
+    margin-bottom: 0;
+    background: linear-gradient(120deg, #232526 60%, #1a73e8 100%);
+    transition:
+        transform 0.28s cubic-bezier(.4,2,.6,1),
+        box-shadow 0.28s,
+        border-color 0.28s,
+        filter 0.28s;
+    filter: brightness(1) saturate(1.1) drop-shadow(0 0 8px #00ffae33);
+    cursor: pointer;
+}
+
+#galeria img:hover, #galeria img:focus {
+    transform: scale(1.07) rotate(-1.5deg);
+    box-shadow:
+        0 8px 32px #00ffae99,
+        0 2px 16px #1a73e8,
+        0 0 0 12px #00ffae22 inset;
+    border-color: #1a73e8;
+    filter: brightness(1.12) saturate(1.25) drop-shadow(0 0 16px #00ffae88);
+    outline: none;
+}
+
+#galeria img:active {
+    transform: scale(0.98);
+    filter: brightness(0.95) saturate(1.1);
+}
+
+/* Estilos para los campos de formularios */
+form input, form textarea, form select {
+    background: rgba(255,255,255,0.12); /* Fondo translúcido */
+    color: #e3eafc; /* Texto claro */
+    border: 1px solid #7fbcff; /* Borde azul claro */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Efecto de enfoque en los campos de formularios */
+form input:focus, form textarea:focus, form select:focus {
+    border-color: #00ffae; /* Borde verde agua al enfocar */
+    background: #232526; /* Fondo oscuro al enfocar */
+    color: #fff; /* Texto blanco al enfocar */
+}
+
+/* Botón principal con gradiente y efecto futurista */
+.btn {
+    background: linear-gradient(90deg, #1a73e8 60%, #00ffae 100%);
+    color: #232526;
+    border: none;
+    padding: 0.7em 1.5em;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-weight: 700;
+    box-shadow: 0 2px 8px #00ffae55;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+/* Efecto hover para el botón principal */
+.btn:hover {
+    background: linear-gradient(90deg, #00ffae 60%, #1a73e8 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px #00ffae99;
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* Estilos para el pie de página */
+footer {
+    background: rgba(30, 41, 59, 0.95); /* Fondo oscuro translúcido */
+    border-radius: 2em 2em 0 0; /* Bordes superiores redondeados */
+    margin-top: 3em; /* Separación superior */
+    color: #7fbcff; /* Texto azul claro */
+    text-align: center; /* Centrado */
+    font-size: 1em;
+    padding-bottom: 2em; /* Espaciado inferior */
+}
+
+/* Media query para dispositivos pequeños */
+@media (max-width: 600px) {
+    h1 { font-size: 1.5em; } /* Título más pequeño */
+    .grid.grid-3 { grid-template-columns: 1fr; } /* Grid de una sola columna */
+}
